@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    table, th, td {
+        font-size: 20px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    .banner {
+        height: 120px;
+    }
+
+    .navbar, .line-width, .content {
+        height: 44px;
+    }
+
+    .line {
+        width: 80%;
+        height: 1px;
+        background-color: black;
+        margin: 0 auto;
+    }
+
+    .left-menu, .right-menu {
+        width: 25%;
+        vertical-align: top;
+    }
+
+    .footer {
+        height: 64px;
+    }
+</style>
+</head>
+<body>
+    <table width="1000px" border="1px" > 
+        <table style="width: 100%">
+            <tr class="banner">
+                <td colspan="3" style="text-align: center">Phần đầu (Banner)</td>
+            </tr>
+            <tr class="navbar">
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td>Trang chủ</td>
+                            <td>giới thiệu</td>
+                            <td>tin tức</td>
+                            <td>liên hệ</td>
+                            <td>diễn đàn</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="line-width">
+                <td colspan="3">
+                    <div class="line"></div>
+                </td>
+            </tr>
+            <tr class="content">
+                <td class="left-menu">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="text-align: center">Tiêu đề Menu</td>
+                        </tr>
+                        <tr>
+                            <td>Menu con</td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="main">
+                    <table style="width: 100%; padding: 0 8px; margin-bottom: 32px; height: 108px">
+                        <tr>
+                            <td>Thông tin</td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; padding: 0 8px; margin-bottom: 32px; height: 108px">
+                        <tr>
+                            <td colspan="2">Tiêu đề lớn 1</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Tên bài biết</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 60%">Ảnh mô tả</td>
+                            <td>Nội dung vắn tắt</td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%; padding: 0 8px;height: 108px">
+                        <tr>
+                            <td colspan="2" style="text-align: end">Tiêu đề lớn 2</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: end">Tên bài biết</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 40%">Nội dung vắn tắt</td>
+                            <td>Ảnh mô tả</td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="right-menu">
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="text-align: center">Tiêu đề Menu</td>
+                        </tr>
+                        <tr>
+                            <td>Menu con</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="footer">
+                <td colspan="3" style="text-align: center">Phần cuối(Footer)</td>
+            </tr>
+        </table>
+</body>
+</html>

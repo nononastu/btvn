@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài tập 2.3</title>
+    <style>
+        html{
+            font-size:20px
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        .navbar > td {
+            background-color: rgb(67, 67, 67);
+            border-bottom: 3px solid #f97907;
+        }
+
+        .navbar, .content {
+            height: 44px;
+        }
+
+        .line {
+            width: 100%;
+            height: 3px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .left-menu, .right-menu {
+            width: 20%;
+            vertical-align: top;
+        }
+
+        .left-menu table tr:first-child .title-menu,
+        .right-menu table tr:first-child .title-menu {
+            background-color: rgb(102, 102, 102);
+            border-right: 3px solid #f97907;
+            border-left: 12px solid #f97907;
+        }
+
+        .footer {
+            height: 64px;
+            background-color: rgb(51, 50, 50);
+        }
+    </style>
+</head>
+<body>
+<table style="width: 100%">
+    <tr class="navbar">
+        <td colspan="3">
+            <table>
+                <tr>
+                    <td><a href="#">Trang chủ</a>
+                        <a href="#">giới thiệu</a>
+                        <a href="#">tin tức</a>
+                        <a href="#">liên hệ</a>
+                        <a href="#">diễn đàn</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="line-width">
+        <td colspan="3">
+            <div class="line"></div>
+        </td>
+    </tr>
+    <tr class="content">
+        <td class="left-menu">
+            <table style="width:100%">
+                <tr>
+                    <td class="title-menu" style="text-align: center;background-color: rgb(102,102,102)">Danh mục
+                        chính
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="#">Gia công phần mềm</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Đào tạo lập trình viên</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Ảnh viên áo cưới</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Tư vấn doanh nghiệp</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table style="width:100%">
+                <tr>
+                    <td class="title-menu" style="text-align: center">Bài viết đáng chú ý</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="#">Hưỡng dẫn đăng ký học</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Hình thức học tập online</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Cài đặt & sử dụng Skype</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Cài đặt & sử dụng teamviewer</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <a href="#"><img src="img/img_2.png" alt=""></a>
+            <a href="#"><img src="img/img_3.png" alt=""></a>
+        </td>
+        <td class="main" style="vertical-align: top">
+            <table style="width: 100%; text-align: center">
+                <tr>
+                    <td><h1>Liên hệ</h1></td>
+                </tr>
+            </table>
+            <table style="width: 100%; padding: 0 8px; margin-bottom: 32px; height: 108px">
+                <tr>
+                    <td style="width: 30%">Tên tài khoản</td>
+                    <td><input style="width: 100%" placeholder="Vui lòng nhập tên tài khoản ..."></td>
+                </tr>
+                <tr>
+                    <td style="width: 30%">Địa chỉ email</td>
+                    <td><input style="width: 100%" placeholder="Vui lòng nhập địa chỉ email ..."></td>
+                </tr>
+                <tr>
+                    <td style="width: 30%">Giới tính</td>
+                    <td>
+                        <input id="male" type="radio" name="sex" value="Nam">
+                        <label for="male">Nam</label>
+                        <input id="female" type="radio" name="sex" value="Nu">
+                        <label for="female">Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 30%">Gửi tới</td>
+                    <td><select name="sendUser" id="user">
+                        <option value="phòng ban">Vui lòng chọn phòng ban</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td style="width: 30%">Nội dung liên hệ</td>
+                    <td><textarea placeholder="Nội dung bạn muốn phản ánh ..." rows="5" cols="50"></textarea> </td>
+                </tr>
+                <tr>
+                    <td style="width: 30%">Lựa chọn nâng cao</td>
+                    <td><input checked type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button>Gửi</button>
+                        <button>Làm mới</button>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td class="right-menu">
+            <table style="width: 100%">
+                <tr>
+                    <td class="title-menu" style="text-align: center">Tư vấn trực tuyến</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <img src="img/img.png" alt="am online">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <img src="img/img_1.png" alt="not online">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%">
+                <tr>
+                    <td class="title-menu" style="text-align: center">Các bài viết mới</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="#">Htaccess trong php</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">HTML 5 & seo</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Viết trang login & logout cho hệ thống</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">CSS nâng cao</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">Làm mịn da mặt với photoshop cs3</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <a href="#"><img src="img/img_4.png" alt=""></a>
+            <a href="#"><img src="img/img_7.png" alt=""></a>
+            <a href="#"><img src="img/img_6.png" alt=""></a>
+        </td>
+    </tr>
+    <tr class="footer">
+        <td colspan="3" style="text-align: center">Bản quyền thuộc về ZentGroup - Academy</td>
+    </tr>
+</table>
+</body>
+</html>
