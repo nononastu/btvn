@@ -1,0 +1,158 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul li{
+    list-style: none;
+}
+
+/* Kiểu 1 */
+
+#content{
+    width: 1500px;
+    background-color:#33CC00 ;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content img{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/* content_left */
+
+/* left_left */
+.left_left{
+    display: flex;
+    flex-direction: row;
+}
+
+/* content_main */
+.content_main{
+    padding: 0px;
+    margin: 0px;
+}
+
+.content_main ul li{
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid #ffffff;
+}
+
+.content_main ul{
+    font-size: 18px;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.menu_cap1 ul {
+    display: none;
+    list-style-type: none;
+    flex-direction: column;
+    position: absolute;
+    padding-top: 20px ;
+    background-color: #33CC00;
+    background-origin: content-box;
+    margin-left: 10px;
+}
+
+.menu_cap1 ul li{
+    background-color: #669900;
+    border-top: 1px solid #00CC00;
+    padding: 10px;
+    background-origin: border-box;
+    margin: 0;
+
+}
+.text_hover{ 
+    position: relative;
+}
+   
+.text_hover:hover + .menu_cap1 ul{
+    display: block;
+}
+
+.fas{
+    color: #ffffff;
+    padding-right: 10px;
+}
+
+.logo{
+    width: 100px;
+    height: 60px;
+    border-right: 1px solid #ffffff;
+    background: url(img/logo.png) repeat-y center/contain;
+
+    background-origin: border-box;
+}
+.category{
+    font-size: 18px;
+    color: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ffffff;
+}
+
+
+/* content_right */
+.content_right{
+    color: #ffffff;
+    padding: 15px ;
+}
+
+.search{
+    border: 0px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.content_right .fas{
+    padding-left: 10px;
+}
+
+
+/* Kiểu 2 */
+#content1{
+    width: 1500px;
+    background-color:#33CC00 ;
+}
+
+.menu_left_cap1 ul {
+    display: none;
+    list-style-type: none;
+    flex-direction: column;
+    position: absolute;
+    padding-top: 20px ;
+    background-color: #33CC00;
+    background-origin: content-box;
+    margin-left: 10px;
+}
+
+.menu_left_cap1 ul li{
+    background-color: #669900;
+    border-top: 1px solid #00CC00;
+    padding: 10px;
+    background-origin: border-box;
+    margin: 0;
+}
+
+.text_hover:hover + .menu_left_cap1 ul{
+    display: block;
+}
+
+.menu_left_cap2{
+    display: none;
+}
+
+

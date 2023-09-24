@@ -1,0 +1,105 @@
+#main{
+    display: flex;
+    flex-direction: row;
+    height: 170px;
+    width: 50%;
+    border: 1px solid #000;
+    justify-content: space-between;
+    
+}
+.pro{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    text-align: center;
+    
+}
+.img{
+    height: 100px;
+}
+.pro:hover{
+    border-color: rgb(240, 161, 15);
+}
+.item1{
+    color: rgb(240, 161, 15);
+}
+
+.item1:hover{
+    color:aqua;
+}
+.item2{
+    color:red;
+    padding: 0px 5px 0px 5px;
+}
+.item2:hover{
+    color:aqua;
+}
+
+
+#bottom{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 50%;
+}
+.bot1{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bot1_1{
+    display: flex;
+    flex-direction: row;
+}
+.img1{
+    margin-top: 20px;
+    margin-right: 10px;
+    height: 10px;
+    width: 20px;
+}
+
+.bot2{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.bot1_2{
+    display: flex;
+    flex-direction: row;
+}  
+
+.sale{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.img2{
+    height: 30px;
+    width: 35px;
+}
+
+.sale b{
+    font-weight: lighter;
+}
+.w1{
+    padding-top: 10px;
+}
+.img3{
+    height: 50%px;
+    width: 100px;
+}
+.word{
+    color: #000;
+    text-decoration:none;
+    font-weight: 900;
+
+}
+.word:hover{
+    text-decoration:underline;
+    color:rgb(9, 213, 213);
+}
+
+
