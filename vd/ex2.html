@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex1.css">
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="crossorigin="anonymous"></script>
+        <script languages="javascript" src="ex1.js"></script>
+    </head>
+<body>
+    <!-- <div id="content">
+        <div class="item1">1</div>
+        <div class="item2">2
+            <div class="item1">item xxxx</div>
+        </div>
+        <div class="item3">3</div>
+        <div class="item3">3</div>
+        <div class="item3">3</div>
+    </div>
+    <p>xin chao</p> -->
+    <!-- <div id="content">
+        <p>hello</p>
+    </div>
+
+    <p>xin chao</p> -->
+    <!-- <input type="text" name="" id="" value="Zent"> -->
+    <!-- <div>
+        <p>hello</p>
+    </div>
+    <button id="click">Click me</button> -->
+
+    <button>Click</button>
+
+	<script>
+	$(document).ready(function($) {
+		$('#click').on('click', function() {
+			$(this).after('<button id="alert">Alert</button>');
+		})
+
+		$('body').on('click','#alert', function() {
+			alert('Xin chào');
+		})
+	});
+	</script>
+</body>
+</html>

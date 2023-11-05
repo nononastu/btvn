@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body class="wp-manga-template-default single single-wp-manga postid-2123 wp-embed-responsive wp-manga-page reading-manga keyboard-navigate page header-style-1 sticky-enabled sticky-style-1 is-sidebar text-ui-light manga-reading-paged-style wpdiscuz_7.6.3 sticky__active" data-new-gr-c-s-check-loaded="14.1135.0" data-gr-ext-installed="">
+        <div class="wrap">
+        <div class="body-wrap">
+        <header class="site-header">
+        <div class="c-header__top">
+        <ul class="search-main-menu">
+        <li>
+        <form id="blog-post-search" class="ajax manga-search-form" action="https://roadsteam.net/" method="get">
+        <input type="text" placeholder="Search..." name="s" value="" class="manga-search-field ui-autocomplete-input" autocomplete="off">
+        <input type="submit" value="Search">
+        <div class="loader-inner line-scale">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+        <input type="hidden" name="post_type" value="wp-manga"><input type="hidden" name="post_type" value="wp-manga"><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul></form>
+        </li>
+        </ul>
+        <div class="main-navigation style-1 ">
+        <div class="container ">
+        <div class="row">
+        <div class="col-md-12">
+        <div class="main-navigation_wrap">
+        <div class="wrap_branding">
+        <a class="logo" href="https://roadsteam.net/" title="Roads Team">
+        <img class="img-responsive" src="https://roadsteam.net/wp-content/uploads/2022/09/logo5-1.png" alt="Roads Team">
+        </a>
+        </div>
+        <div class="main-menu">
+        <ul class="nav navbar-nav main-navbar"><li id="menu-item-277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-277"><a href="https://roadsteam.net/">Home</a></li>
+        <li id="menu-item-278" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-278"><a href="https://roadsteam.net/?s=&amp;post_type=wp-manga&amp;status%5B%5D=end">Completed</a></li>
+        <li id="menu-item-279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-279"><a href="https://roadsteam.net/manga-genre/manhwa/">Manhwa</a></li>
+        <li id="menu-item-280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-280"><a href="https://roadsteam.net/manga-genre/manga/">Manga</a></li>
+        </ul> </div>
+        <div class="search-navigation search-sidebar">
+        <div id="manga-search-3" class="widget col-12 col-md-12   default  no-icon heading-style-1 manga-widget widget-manga-search"><div class="widget__inner manga-widget widget-manga-search__inner c-widget-wrap"><div class="widget-content">
+        <div class="search-navigation__wrap">
+        <script type="text/javascript">
+          jQuery(document).ready(function ($) {
+            if ($('.c-header__top .manga-search-form').length !== 0 && $('.c-header__top .manga-search-form.search-form').length !== 0) {
+        
+              $('form#blog-post-search').append('<input type="hidden" name="post_type" value="wp-manga">');
+        
+              $('form#blog-post-search').addClass("manga-search-form");
+        
+              $('form#blog-post-search input[name="s"]').addClass("manga-search-field");
+        
+              $('form.manga-search-form.ajax input.manga-search-field').each(function(){
+        
+              var searchIcon = $(this).parent().children('.ion-ios-search-strong');
+        
+              var append = $(this).parent();
+        
+              $(this).autocomplete({
+                appendTo: append,
+                source: function( request, resp ) {
+                  $.ajax({
+                    url: manga.ajax_url,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                      action: 'wp-manga-search-manga',
+                      title: request.term,
+                    },
+                    success: function( data ) {
+                      resp( $.map( data.data, function( item ) {
+                        if ( true == data.success ) {
+                          return {
+                            label: item.title,
+                            value: item.title,
+                            url: item.url,
+                            type: item.type
+                          }
+                        } else {
+                          return {
+                            label: item.message,
+                            value: item.message,
+                            type: item.type,
+                            click: false
+                          }
+                        }
+                      }))
+                    }
+                  });
+                },
+                select: function( e, ui ) {
+                  if ( ui.item.url ) {
+                    window.location.href = ui.item.url;
+                  } else {
+                    if ( ui.item.click ) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  }
+                },
+                open: function( e, ui ) {
+                  var acData = $(this).data( 'uiAutocomplete' );
+                  acData.menu.element.addClass('manga-autocomplete').find('li div').each(function(){
+                    var $self = $(this),
+                      keyword = $.trim( acData.term ).split(' ').join('|');
+                    $self.html( $self.text().replace( new RegExp( "(" + keyword + ")", "gi" ), '<span class="manga-text-highlight">$1</span>' ) );
+                  });
+                }
+              }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+                  return $( "<li class='search-item'>" )
+                  .append( "<div class='manga-type-" + item.type + "'>" + item.label + "</div>" )
+                  .appendTo( ul );
+              };
+            });
+            }
+          });
+        </script>
+        <ul class="main-menu-search nav-menu">
+        <li class="menu-search">
+        <a href="javascript:;" class="open-search-main-menu"> <i class="icon ion-ios-search"></i>
+        <i class="icon ion-android-close"></i> </a>
+        <ul class="search-main-menu">
+        <li>
+        <form class="manga-search-form search-form ajax" action="https://roadsteam.net/" method="get">
+        <input class="manga-search-field ui-autocomplete-input" type="text" placeholder="Search..." name="s" value="" autocomplete="off">
+        <input type="hidden" name="post_type" value="wp-manga"> <i class="icon ion-ios-search"></i>
+        <div class="loader-inner ball-clip-rotate-multiple">
+        <div></div>
+        <div></div>
+        </div>
+        <input type="submit" value="Search">
+        <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul></form>
+        </li>
+        </ul>
+        </li>
+        </ul>
+        </div>
+        </div></div></div>
+        </div>
+        <div class="c-togle__menu">
+        <button type="button" class="menu_icon__open">
+        <span></span> <span></span> <span></span>
+        </button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="mobile-menu menu-collapse off-canvas" data-cfapps-welcome-bar-adjusted-fixed-element-original-top="0" style="top: 48px;">
+        <div class="close-nav">
+        <button class="menu_icon__close">
+        <span></span> <span></span>
+        </button>
+        </div>
+        <div class="c-modal_item">
+        
+        <span class="c-modal_sign-in">
+        <a href="#" data-toggle="modal" data-target="#form-login" class="btn-active-modal">Sign in</a>
+        </span>
+        <span class="c-modal_sign-up">
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#form-sign-up" class="btn-active-modal">Sign up</a>
+        </span>
+        </div>
+        <nav class="off-menu">
+        <ul id="menu-main-1" class="nav navbar-nav main-navbar"><li id="nav-menu-item-277" class="main-menu-item menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://roadsteam.net/" class="menu-link  main-menu-link">Home </a></li>
+        <li id="nav-menu-item-278" class="main-menu-item menu-item-depth-0 menu-item menu-item-type-custom menu-item-object-custom"><a href="https://roadsteam.net/?s=&amp;post_type=wp-manga&amp;status%5B%5D=end" class="menu-link  main-menu-link">Completed </a></li>
+        <li id="nav-menu-item-279" class="main-menu-item menu-item-depth-0 menu-item menu-item-type-custom menu-item-object-custom"><a href="https://roadsteam.net/manga-genre/manhwa/" class="menu-link  main-menu-link">Manhwa </a></li>
+        <li id="nav-menu-item-280" class="main-menu-item menu-item-depth-0 menu-item menu-item-type-custom menu-item-object-custom"><a href="https://roadsteam.net/manga-genre/manga/" class="menu-link  main-menu-link">Manga </a></li>
+        </ul> </nav>
+        <div class="center"></div>
+        </div>
+        <div class="clone-header" style="height: 102.2px;"></div><div class="no-subnav c-sub-header-nav with-border sticky">
+        <div class="container ">
+        <div class="c-sub-nav_wrap">
+        <div class="sub-nav_content">
+        </div>
+        <div class="c-modal_item">
+        
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#form-login" class="btn-active-modal">Sign in</a>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#form-sign-up" class="btn-active-modal">Sign up</a>
+        </div>
+        </div>
+        <div class="entry-header">
+        <div class="wp-manga-nav">
+        <div class="select-view">
+        
+        
+        <div class="c-selectpicker selectpicker_chapter chapters_selectbox_holder" data-manga="2123" data-chapter="chap-22" data-vol="0" data-type="content">
+        <label>
+        <select class="c-selectpicker selectpicker_chapter selectpicker single-chapter-select" style="" for="volume-id-0">
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-24/">Chap 24 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-23/">Chap 23 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" selected="selected">Chap 22</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-21/">Chap 21</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-20/">Chap 20 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-19/">Chap 19 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-18/">Chap 18</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-17/">Chap 17 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-16/">Chap 16 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-15/">Chap 15</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-14/">Chap 14</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-13/">Chap 13</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-12/">Chap 12</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-11/">Chap 11</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-10/">Chap 10</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-9/">Chap 9</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-8/">Chap 8</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-7/">Chap 7</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-6/">Chap 6</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-5/">Chap 5</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-4/">Chap 4</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-3/">Chap 3</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-2/">Chap 2</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-1/">Chap 1</option>
+        </select>
+        </label>
+        </div>
+        </div>
+        <div class="select-pagination">
+        <div class="nav-links">
+        <div class="nav-previous "><a href="https://roadsteam.net/manga/khu-rung-binh-yen/chap-21/" class="btn prev_page" title="Chap 21">Prev</a>
+        </div>
+        <div class="nav-next "><a href="https://roadsteam.net/manga/khu-rung-binh-yen/chap-23/" class="btn next_page" title="Chap 23">Next</a></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </header>
+        <div class="site-content">
+        <div class="c-page-content style-1 reading-content-wrap chapter-type-text" data-site-url="https://roadsteam.net/">
+        <div class="content-area">
+        <div class="container">
+        <div class="row">
+        <div class="main-col col-md-12 col-sm-12 sidebar-hidden">
+        <h1 id="chapter-heading">KHU RỪNG BÌNH YÊN - Chap 22</h1>
+        
+        <div class="main-col-inner">
+        <div class="c-blog-post">
+        <div class="entry-header header" id="manga-reading-nav-head" data-position="header" data-chapter="chap-22" data-id="2123"> <div class="wp-manga-nav">
+        <div class="entry-header_wrap">
+        <div class="c-breadcrumb-wrapper">
+        <div class="c-breadcrumb">
+        <ol class="breadcrumb">
+        <li>
+        <a href="https://roadsteam.net/">
+        Home </a>
+        </li>
+        <li>
+        <a href="https://roadsteam.net/manga/khu-rung-binh-yen/">
+        KHU RỪNG BÌNH YÊN </a>
+        </li>
+        <li class="active">
+        Chap 22 </li>
+        </ol>
+        </div>
+        <div class="action-icon">
+        <ul class="action_list_icon list-inline">
+        <li>
+        <a href="javascript:void(0)" class="btn-text-reading-increase"><i class="icon ion-md-add"></i></a>
+        </li>
+        <li>
+        <a href="javascript:void(0)" class="btn-text-reading-decrease"><i class="icon ion-md-remove"></i></a>
+        </li>
+        <li>
+        <script type="text/javascript"> var requireLogin2BookMark = true; </script><a href="#" class="wp-manga-action-button" data-action="bookmark" data-post="2123" data-chapter="2145" data-page="1" title="Bookmark"><i class="icon ion-ios-bookmark"></i></a> </li>
+        <li><a href="#" class="wp-manga-action-button" data-action="toggle-contrast" title="Toggle Dark/Light Mode"><i class="icon ion-md-contrast"></i></a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <div class="select-view">
+        
+        
+        <div class="c-selectpicker selectpicker_chapter chapters_selectbox_holder" data-manga="2123" data-chapter="chap-22" data-vol="0" data-type="content">
+        <label>
+        <select class="c-selectpicker selectpicker_chapter selectpicker single-chapter-select" style="" for="volume-id-0">
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-24/">Chap 24 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-23/">Chap 23 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" selected="selected">Chap 22</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-21/">Chap 21</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-20/">Chap 20 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-19/">Chap 19 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-18/">Chap 18</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-17/">Chap 17 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-16/">Chap 16 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-15/">Chap 15</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-14/">Chap 14</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-13/">Chap 13</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-12/">Chap 12</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-11/">Chap 11</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-10/">Chap 10</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-9/">Chap 9</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-8/">Chap 8</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-7/">Chap 7</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-6/">Chap 6</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-5/">Chap 5</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-4/">Chap 4</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-3/">Chap 3</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-2/">Chap 2</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-1/">Chap 1</option>
+        </select>
+        </label>
+        </div>
+        </div>
+        <div class="select-pagination">
+        <div class="nav-links">
+        <div class="nav-previous "><a href="https://roadsteam.net/manga/khu-rung-binh-yen/chap-21/" class="btn prev_page" title="Chap 21">Prev</a>
+        </div>
+        <div class="nav-next "><a href="https://roadsteam.net/manga/khu-rung-binh-yen/chap-23/" class="btn next_page" title="Chap 23">Next</a></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="entry-content">
+        <div class="entry-content_wrap">
+        <div class="read-container">
+        <div class="reading-content">
+        
+        <div style="text-align: center;">
+        <script data-cfasync="false" type="text/javascript" src="//lby2kd27c.com/lv/esnk/1966011/code.js" async="" class="__clb-1966011"></script> <div><script data-cfasync="false" async="" type="text/javascript" src="//otoliteaerides.com/t7xKeocKzzv/62012"></script><iframe scrolling="no" style="width: 100% !important; height: 267px !important; margin: 0px; padding: 0px; border: none; outline: none; box-sizing: border-box; position: static !important; color-scheme: none; inset: 0px; overflow: hidden; z-index: 1 !important; user-select: none !important;"></iframe></div> <script src="https://www.vipads.live/vn/c-756-25.js" type="text/javascript"></script> </div>
+        
+        <input type="hidden" id="wp-manga-current-chap" data-id="2145" value="chap-22">
+        <div class="text-left">
+        <p><img decoding="async" src="https://et5.roadsteam.net/2023/09/29/0d9f535183963ec6b.jpeg" alt="0d9f535183963ec6b.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/1a9cb887e671a405d.jpeg" alt="1a9cb887e671a405d.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/24f5c2786d79a219f.jpeg" alt="24f5c2786d79a219f.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/38d147bdc85a92964.jpeg" alt="38d147bdc85a92964.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/40fad6204c3b00b7e.jpeg" alt="40fad6204c3b00b7e.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/530b622cf72fc7713.jpeg" alt="530b622cf72fc7713.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/671fd1babbf791aa8.jpeg" alt="671fd1babbf791aa8.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/7e933e2babec284c4.jpeg" alt="7e933e2babec284c4.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/8bd2a011bed71cb36.jpeg" alt="8bd2a011bed71cb36.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/9d174712fd04f97b4.jpeg" alt="9d174712fd04f97b4.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/104acef3136b72cdbb.jpeg" alt="104acef3136b72cdbb.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/11145144bdd105668e.jpeg" alt="11145144bdd105668e.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/1251bd3ab0a4662e70.jpeg" alt="1251bd3ab0a4662e70.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/137f37952589662694.jpeg" alt="137f37952589662694.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/144d7d4d6643f2064c.jpeg" alt="144d7d4d6643f2064c.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/1590189eef892d4700.jpeg" alt="1590189eef892d4700.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/16200d369220242826.jpeg" alt="16200d369220242826.jpeg" border="0"><br>
+        <img decoding="async" src="https://et5.roadsteam.net/2023/09/29/174e260087a43a4e32.jpeg" alt="174e260087a43a4e32.jpeg" border="0"></p>
+        </div>
+        <div id="text-chapter-toolbar">
+        <a href="#"><i class="icon ion-md-settings"></i></a>
+        </div>
+        </div>
+        
+        <div style="text-align: center;">
+        <script src="https://www.vipads.live/vn/c-756-25.js" type="text/javascript"></script> <script data-cfasync="false" type="text/javascript" src="//lby2kd27c.com/lv/esnk/1966010/code.js" async="" class="__clb-1966010"></script> </div>
+        
+        </div>
+        </div>
+        </div>
+        <div class="entry-header footer" id="manga-reading-nav-foot" data-position="footer" data-id="2123">
+        <div class="wp-manga-nav">
+        <div class="select-view">
+        
+        
+        <div class="c-selectpicker selectpicker_chapter chapters_selectbox_holder" data-manga="2123" data-chapter="chap-22" data-vol="0" data-type="content">
+        <label>
+        <select class="c-selectpicker selectpicker_chapter selectpicker single-chapter-select" style="" for="volume-id-0">
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-24/">Chap 24 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-23/">Chap 23 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" selected="selected">Chap 22</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-21/">Chap 21</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-20/">Chap 20 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-19/">Chap 19 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-18/">Chap 18</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-17/">Chap 17 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-16/">Chap 16 - 19+</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-15/">Chap 15</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-14/">Chap 14</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-13/">Chap 13</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-12/">Chap 12</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-11/">Chap 11</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-10/">Chap 10</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-9/">Chap 9</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-8/">Chap 8</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-7/">Chap 7</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-6/">Chap 6</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-5/">Chap 5</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-4/">Chap 4</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-3/">Chap 3</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-2/">Chap 2</option>
+        <option class="short " data-limit="40" value="chap-22" data-redirect="https://roadsteam.net/manga/khu-rung-binh-yen/chap-1/">Chap 1</option>
+        </select>
+        </label>
+        </div>
+        </div>
+        <div class="select-pagination">
+        <div class="nav-links">
+        <div class="nav-previous "><a href="https://roadsteam.net/manga/khu-rung-binh-yen/chap-21/" class="btn prev_page" title="Chap 21">Prev</a>
+        </div>
+        <div class="nav-next "><a href="https://roadsteam.net/manga/khu-rung-binh-yen/chap-23/" class="btn next_page" title="Chap 23">Next</a></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="row ">
+        <div class="main-col col-12 col-sm-8 col-md-8 col-lg-8">
+        
+        <h4>Comments for chapter "Chap 22"</h4>
+        <div id="manga-discussion" class="manga-discussion wrapper">
+        <div class="wpdiscuz_top_clearing"></div>
+        <div id="comments" class="comments-area"><div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div> <div id="wpdcom" class="wpdiscuz_unauth wpd-default wpd-layout-1 wpd-comments-open">
+        <div class="wc_social_plugin_wrapper">
+        </div>
+        <div class="wpd-form-wrap">
+        <div class="wpd-form-head">
+        <div class="wpd-sbs-toggle">
+        <i class="far fa-envelope"></i> <span class="wpd-sbs-title">Subscribe</span>
+        <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="wpd-auth">
+        <div class="wpd-login">
+        <a href="https://roadsteam.net/wp-login.php?redirect_to=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F"><i class="fas fa-sign-in-alt"></i> Login</a> </div>
+        </div>
+        </div>
+        <div class="wpdiscuz-subscribe-bar wpdiscuz-hidden">
+        <form action="https://roadsteam.net/wp-admin/admin-ajax.php?action=wpdAddSubscription" method="post" id="wpdiscuz-subscribe-form">
+        <div class="wpdiscuz-subscribe-form-intro">Notify of </div>
+        <div class="wpdiscuz-subscribe-form-option" style="width:40%;">
+        <select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+        <option value="post">new follow-up comments</option>
+        <option value="all_comment">new replies to my comments</option>
+        </select>
+        </div>
+        <div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+        <input class="email" type="email" name="wpdiscuzSubscriptionEmail" required="required" value="" placeholder="Email">
+        </div>
+        <div class="wpdiscuz-subscribe-form-button">
+        <input id="wpdiscuz_subscription_button" class="wpd-prim-button wpd_not_clicked" type="submit" value="›" name="wpdiscuz_subscription_button">
+        </div>
+        <input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="a9b65d76b4"><input type="hidden" name="_wp_http_referer" value="/manga/khu-rung-binh-yen/chap-22/"> </form>
+        </div>
+        <div class="wpd-form wpd-form-wrapper wpd-main-form-wrapper" id="wpd-main-form-wrapper-0_0">
+        <form method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd_main_comm_form">
+        <div class="wpd-field-comment">
+        <div class="wpdiscuz-item wc-field-textarea">
+        <div class="wpdiscuz-textarea-wrap wpd-txt">
+        <div class="wpd-avatar">
+        <img alt="guest" src="https://secure.gravatar.com/avatar/128da91df17cb3029a6ec8c2505be3a2?s=56&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/128da91df17cb3029a6ec8c2505be3a2?s=112&amp;d=mm&amp;r=x 2x" class="avatar avatar-56 photo" height="56" width="56" loading="lazy" decoding="async"> </div>
+        <div class="wpd-textarea-wrap">
+        <div id="wpd-editor-char-counter-0_0" class="wpd-editor-char-counter"></div>
+        <label style="display: none;" for="wc-textarea-0_0">Label</label>
+        <textarea id="wc-textarea-0_0" placeholder="Join the discussion" aria-label="Join the discussion" name="wc_comment" class="wc_comment wpd-field"></textarea>
+        </div>
+        <div class="wpd-editor-buttons-right">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="wpd-form-foot" style="display:none;">
+        <div class="wpdiscuz-textarea-foot">
+        <div class="wpdiscuz-button-actions"></div>
+        </div>
+        <div class="wpd-form-row">
+        <div class="wpd-form-col-left">
+        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+        <div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+        <input id="wc_name-0_0" value="" required="required" aria-required="true" class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern=".{3,50}" title="">
+        <label for="wc_name-0_0" class="wpdlb">Name*</label>
+        </div>
+        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+        <div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+        <input id="wc_email-0_0" value="" class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email">
+        <label for="wc_email-0_0" class="wpdlb">Email</label>
+        </div>
+        </div>
+        <div class="wpd-form-col-right">
+        <div class="wpdiscuz-item chapter_id-wrapper">
+        <input id="chapter_id-0_0" class="chapter_id wpd-field wpd-field-text" type="text" name="chapter_id" value="2145" placeholder="chapter_id">
+        <label for="chapter_id-0_0" class="wpdlb">chapter_id</label>
+        </div>
+        <div class="wc-field-submit">
+        <input id="wpd-field-submit-0_0" class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit" name="submit" value="Post Comment" aria-label="Post Comment">
+        </div>
+        </div>
+        <div class="clearfix"></div>
+        </div>
+        </div>
+        <input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id">
+        <input type="hidden" name="wp_manga_chapter_id" value="2145">
+        </form>
+        </div>
+        <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+        <div class="wpd-form wpd-form-wrapper wpd-secondary-form-wrapper" id="wpd-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;">
+        <div class="wpd-secondary-forms-social-content"></div>
+        <div class="clearfix"></div>
+        <form method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd-secondary-form-wrapper">
+        <div class="wpd-field-comment">
+        <div class="wpdiscuz-item wc-field-textarea">
+        <div class="wpdiscuz-textarea-wrap wpd-txt">
+        <div class="wpd-avatar">
+        <img alt="guest" src="https://secure.gravatar.com/avatar/92315856f53dbbad69c7bf17680b37b4?s=56&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/92315856f53dbbad69c7bf17680b37b4?s=112&amp;d=mm&amp;r=x 2x" class="avatar avatar-56 photo" height="56" width="56" loading="lazy" decoding="async"> </div>
+        <div class="wpd-textarea-wrap">
+        <div id="wpd-editor-char-counter-wpdiscuzuniqueid" class="wpd-editor-char-counter"></div>
+        <label style="display: none;" for="wc-textarea-wpdiscuzuniqueid">Label</label>
+        <textarea id="wc-textarea-wpdiscuzuniqueid" placeholder="Join the discussion" aria-label="Join the discussion" name="wc_comment" class="wc_comment wpd-field"></textarea>
+        </div>
+        <div class="wpd-editor-buttons-right">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="wpd-form-foot" style="display:none;">
+        <div class="wpdiscuz-textarea-foot">
+        <div class="wpdiscuz-button-actions"></div>
+        </div>
+        <div class="wpd-form-row">
+        <div class="wpd-form-col-left">
+        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+        <div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+        <input id="wc_name-wpdiscuzuniqueid" value="" required="required" aria-required="true" class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern=".{3,50}" title="">
+        <label for="wc_name-wpdiscuzuniqueid" class="wpdlb">Name*</label>
+        </div>
+        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+        <div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+        <input id="wc_email-wpdiscuzuniqueid" value="" class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email">
+        <label for="wc_email-wpdiscuzuniqueid" class="wpdlb">Email</label>
+        </div>
+        </div>
+        <div class="wpd-form-col-right">
+        <div class="wpdiscuz-item chapter_id-wrapper">
+        <input id="chapter_id-wpdiscuzuniqueid" class="chapter_id wpd-field wpd-field-text" type="text" name="chapter_id" value="2145" placeholder="chapter_id">
+        <label for="chapter_id-wpdiscuzuniqueid" class="wpdlb">chapter_id</label>
+        </div>
+        <div class="wc-field-submit">
+        <input id="wpd-field-submit-wpdiscuzuniqueid" class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit" name="submit" value="Post Comment" aria-label="Post Comment">
+        </div>
+        </div>
+        <div class="clearfix"></div>
+        </div>
+        </div>
+        <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id">
+        <input type="hidden" name="wp_manga_chapter_id" value="2145">
+        </form>
+        </div>
+        </div>
+        </div>
+        <div id="wpd-threads" class="wpd-thread-wrapper">
+        <div class="wpd-thread-head">
+        <div class="wpd-thread-info " data-comments-count="10">
+        <span class="wpdtc" title="10">10</span> Comments </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-thread-filter">
+        <div class="wpd-filter wpdf-reacted wpd_not_clicked" wpd-tooltip="Most reacted comment">
+        <i class="fas fa-bolt"></i></div>
+        <div class="wpd-filter wpdf-hottest wpd_not_clicked" wpd-tooltip="Hottest comment thread">
+        <i class="fas fa-fire"></i></div>
+        <div class="wpd-filter wpdf-sorting">
+        <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc wpdiscuz-sort-button-active" data-sorting="oldest">Oldest</span>
+        <i class="fas fa-sort-down"></i>
+        <div class="wpdiscuz-sort-buttons" style="display: none;">
+        <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc" data-sorting="newest">Newest</span>
+        <span class="wpdiscuz-sort-button wpdiscuz-vote-sort-up" data-sorting="by_vote">Most Voted</span>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="wpd-comment-info-bar">
+        <div class="wpd-current-view"><i class="fas fa-quote-left"></i> Inline Feedbacks </div>
+        <div class="wpd-filter-view-all">View all comments</div>
+        </div>
+        <div class="wpd-thread-list">
+        <div id="wpd-comm-13382_0" class="comment even thread-even depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Vanilla" src="https://secure.gravatar.com/avatar/4a03b1ce1f67c26f96e89e32fa469281?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/4a03b1ce1f67c26f96e89e32fa469281?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13382" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Vanilla
+        </div>
+        <div class="wpd-comment-date" title="29/09/2023 17:22">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        28 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Đọc bộ này tự nhiên thấy mình mắc bệnh tiểu đường ngang
+        chapter_id ... &amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13382" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13382"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Đọc bộ này tự nhiên thấy mình mắc bệnh tiểu đường ngang</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result wpd-up" title="9">9</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13382_0"></div></div><div id="wpd-comm-13389_0" class="comment odd alt thread-odd thread-alt depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="...." src="https://secure.gravatar.com/avatar/c13136653cc2e8ef5ee94c9617f94fa8?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/c13136653cc2e8ef5ee94c9617f94fa8?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13389" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        ....
+        </div>
+        <div class="wpd-comment-date" title="29/09/2023 21:47">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        28 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=tự nhin hong thích bố vì về sớm dị con ơi là connn ăn nói xà lơ 🤣
+        c... &amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13389" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13389"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>tự nhin hong thích bố vì về sớm dị con ơi là connn ăn nói xà lơ 🤣</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result wpd-up" title="1">1</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13389_0"></div></div><div id="wpd-comm-13405_0" class="comment even thread-even depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Gtth_0001" src="https://secure.gravatar.com/avatar/5d863d93461bf73d3a3f61b6715840f6?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/5d863d93461bf73d3a3f61b6715840f6?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13405" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Gtth_0001
+        </div>
+        <div class="wpd-comment-date" title="30/09/2023 00:00">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        28 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Sao mà giấu đc cây hàng đó v anh mình ơi =”(((
+        chapter_id  21... &amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13405" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13405"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Sao mà giấu đc cây hàng đó v anh mình ơi =”(((</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result wpd-up" title="2">2</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13405_0"></div></div><div id="wpd-comm-13407_0" class="comment byuser comment-author-eugene-uri odd alt thread-odd thread-alt depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-user wpd-blog-subscriber">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Eugene uri" src="https://secure.gravatar.com/avatar/c0e314ac37112c1168bc9a6cf46e34f4?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/c0e314ac37112c1168bc9a6cf46e34f4?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13407" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Eugene uri
+        </div>
+        <div class="wpd-comment-date" title="30/09/2023 00:46">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        28 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Hi vọng cứ như vậy 😭 ngọt xỉu yêu hai đứa quá
+        chapter_id  2145&amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13407" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13407"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Hi vọng cứ như vậy 😭 ngọt xỉu yêu hai đứa quá</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result wpd-up" title="4">4</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13407_0"></div></div><div id="wpd-comm-13471_0" class="comment even thread-even depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Tred" src="https://secure.gravatar.com/avatar/c7a4c9d5d012d49f94e3002b9820f48b?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/c7a4c9d5d012d49f94e3002b9820f48b?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13471" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Tred
+        </div>
+        <div class="wpd-comment-date" title="30/09/2023 22:14">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        27 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Trang bị sao xem ko dc 😢
+        chapter_id  2145&amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13471" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13471"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Trang bị sao xem ko dc 😢</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result" title="0">0</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13471_0"></div></div><div id="wpd-comm-13537_0" class="comment odd alt thread-odd thread-alt depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Mê Bl rồi làm sao đây" src="https://secure.gravatar.com/avatar/56bd1f57b5526f56e7bffc39334cdfe5?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/56bd1f57b5526f56e7bffc39334cdfe5?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13537" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Mê Bl rồi làm sao đây
+        </div>
+        <div class="wpd-comment-date" title="01/10/2023 18:34">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        26 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Bố ơi hay là bố đóng cọc ở đó luôn đừng về nữa
+        chapter_id  2145&amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13537" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13537"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Bố ơi hay là bố đóng cọc ở đó luôn đừng về nữa</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result" title="0">0</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13537_0"></div></div><div id="wpd-comm-13750_0" class="comment even thread-even depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Dthw là t thíttt:)" src="https://secure.gravatar.com/avatar/fa18ef31324ef2db5d29bba52fd0271c?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/fa18ef31324ef2db5d29bba52fd0271c?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-13750" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Dthw là t thíttt:)
+        </div>
+        <div class="wpd-comment-date" title="04/10/2023 04:02">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        24 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Ra nhanhh ikk
+        chapter_id  2145&amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-13750" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-13750"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Ra nhanhh ikk</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result" title="0">0</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-13750_0"></div></div><div id="wpd-comm-14128_0" class="comment odd alt thread-odd thread-alt depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Nhà nội chuche:>" src="https://secure.gravatar.com/avatar/7e6de8e80ef4de5bd21c988d4abc3ae7?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/7e6de8e80ef4de5bd21c988d4abc3ae7?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-14128" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Nhà nội chuche:&gt;
+        </div>
+        <div class="wpd-comment-date" title="08/10/2023 08:27">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        19 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Tr ui ngọt xiu~ mà sợ ngọt khúc đầu đắng khúc sau:)
+        chapter_id  214... &amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-14128" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-14128"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Tr ui ngọt xiu~ mà sợ ngọt khúc đầu đắng khúc sau:)</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result" title="0">0</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-14128_0"></div></div><div id="wpd-comm-14304_0" class="comment even thread-even depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="Lopiz" src="https://secure.gravatar.com/avatar/a462e185604e0d733ba2bd93590ee3ac?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/a462e185604e0d733ba2bd93590ee3ac?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-14304" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        Lopiz
+        </div>
+        <div class="wpd-comment-date" title="10/10/2023 00:50">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        18 days ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Trê. Chap rồi shop ơi
+        chapter_id  2145&amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-14304" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-14304"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Trê. Chap rồi shop ơi</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result" title="0">0</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-14304_0"></div></div><div id="wpd-comm-15687_0" class="comment odd alt thread-odd thread-alt depth-1 wpd-comment wpd_comment_level-1"><div class="wpd-comment-wrap wpd-blog-guest">
+        <div class="wpd-comment-left ">
+        <div class="wpd-avatar ">
+        <img alt="120cm=)))" src="https://secure.gravatar.com/avatar/fdcfb89e7d6f7c813a68a3dd2978afaa?s=64&amp;d=mm&amp;r=x" srcset="https://secure.gravatar.com/avatar/fdcfb89e7d6f7c813a68a3dd2978afaa?s=128&amp;d=mm&amp;r=x 2x" class="avatar avatar-64 photo" height="64" width="64" loading="lazy" decoding="async">
+        </div>
+        </div>
+        <div id="comment-15687" class="wpd-comment-right">
+        <div class="wpd-comment-header">
+        <div class="wpd-comment-author ">
+        120cm=)))
+        </div>
+        <div class="wpd-comment-date" title="27/10/2023 15:41">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        16 hours ago
+        </div>
+        <div class="wpd-comment-share wpd-hidden wpd-tooltip wpd-top">
+        <i class="fas fa-share-alt" aria-hidden="true"></i>
+        <div class="wpd-tooltip-content">
+        <a class="wc_tw" rel="noreferrer" target="_blank" href="https://twitter.com/intent/tweet?text=Ngày top đi là ngày nhà t lụt
+        chapter_id  2145&amp;url=https%3A%2F%2Froadsteam.net%2Fmanga%2Fkhu-rung-binh-yen%2Fchap-22%2F%23comment-15687" title="Share On Twitter"><i class="fab fa-twitter wpf-cta" aria-hidden="true"></i></a><a class="wc_vk" rel="noreferrer" target="_blank" href="https://vk.com/share.php?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On VKontakte"><i class="fab fa-vk wpf-cta" aria-hidden="true"></i></a><a class="wc_ok" rel="noreferrer" target="_blank" href="https://connect.ok.ru/offer?url=https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/" title="Share On Odnoklassniki"><i class="fab fa-odnoklassniki wpf-cta" aria-hidden="true"></i></a>
+        </div>
+        </div>
+        <div class="wpd-space"></div>
+        <div class="wpd-comment-link wpd-hidden">
+        <span wpd-tooltip="Comment Link" wpd-tooltip-position="left"><i class="fas fa-link" aria-hidden="true" data-wpd-clipboard="https://roadsteam.net/manga/khu-rung-binh-yen/chap-22/#comment-15687"></i></span>
+        </div>
+        </div>
+        <div class="wpd-comment-text">
+        <p>Ngày top đi là ngày nhà t lụt</p>
+        <div class="wpd-bottom-custom-fields"><div class="wpd-custom-field wpd-cf-text"><div class="wpd-cf-label">chapter_id</div> <div class="wpd-cf-value"> 2145</div></div></div>
+        </div>
+        <div class="wpd-comment-footer">
+        <div class="wpd-vote">
+        <div class="wpd-vote-up wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        <div class="wpd-vote-result" title="0">0</div>
+        <div class="wpd-vote-down wpd_not_clicked">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+        </div>
+        </div>
+        <div class="wpd-reply-button">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+        <span>Reply</span>
+        </div>
+        <div class="wpd-space"></div>
+        </div>
+        </div>
+        </div><div id="wpdiscuz_form_anchor-15687_0"></div></div> <div class="wpdiscuz-comment-pagination">
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div id="wpdiscuz-loading-bar" class="wpdiscuz-loading-bar-unauth"></div>
+        <div id="wpdiscuz-comment-message" class="wpdiscuz-comment-message-unauth" data-cfapps-welcome-bar-adjusted-fixed-element-original-top="38" style="top: 86px;"></div>
+        </div>
+        
+        </div>
+        <div class="sidebar-col col-md-4 col-sm-4">
+        <div id="main-sidebar" class="main-sidebar" role="complementary">
+        <div class="row"><div id="manga-search-2" class="widget col-12 col-md-12   default  no-icon heading-style-1 manga-widget widget-manga-search"><div class="widget__inner manga-widget widget-manga-search__inner c-widget-wrap"><div class="widget-content">
+        <div class="search-navigation__wrap">
+        <script type="text/javascript">
+          jQuery(document).ready(function ($) {
+            if ($('.c-header__top .manga-search-form').length !== 0 && $('.c-header__top .manga-search-form.search-form').length !== 0) {
+        
+              $('form#blog-post-search').append('<input type="hidden" name="post_type" value="wp-manga">');
+        
+              $('form#blog-post-search').addClass("manga-search-form");
+        
+              $('form#blog-post-search input[name="s"]').addClass("manga-search-field");
+        
+              $('form.manga-search-form.ajax input.manga-search-field').each(function(){
+        
+              var searchIcon = $(this).parent().children('.ion-ios-search-strong');
+        
+              var append = $(this).parent();
+        
+              $(this).autocomplete({
+                appendTo: append,
+                source: function( request, resp ) {
+                  $.ajax({
+                    url: manga.ajax_url,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                      action: 'wp-manga-search-manga',
+                      title: request.term,
+                    },
+                    success: function( data ) {
+                      resp( $.map( data.data, function( item ) {
+                        if ( true == data.success ) {
+                          return {
+                            label: item.title,
+                            value: item.title,
+                            url: item.url,
+                            type: item.type
+                          }
+                        } else {
+                          return {
+                            label: item.message,
+                            value: item.message,
+                            type: item.type,
+                            click: false
+                          }
+                        }
+                      }))
+                    }
+                  });
+                },
+                select: function( e, ui ) {
+                  if ( ui.item.url ) {
+                    window.location.href = ui.item.url;
+                  } else {
+                    if ( ui.item.click ) {
+                      return true;
+                    } else {
+                      return false;
+                    }
+                  }
+                },
+                open: function( e, ui ) {
+                  var acData = $(this).data( 'uiAutocomplete' );
+                  acData.menu.element.addClass('manga-autocomplete').find('li div').each(function(){
+                    var $self = $(this),
+                      keyword = $.trim( acData.term ).split(' ').join('|');
+                    $self.html( $self.text().replace( new RegExp( "(" + keyword + ")", "gi" ), '<span class="manga-text-highlight">$1</span>' ) );
+                  });
+                }
+              }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+                  return $( "<li class='search-item'>" )
+                  .append( "<div class='manga-type-" + item.type + "'>" + item.label + "</div>" )
+                  .appendTo( ul );
+              };
+            });
+            }
+          });
+        </script>
+        <ul class="main-menu-search nav-menu">
+        <li class="menu-search">
+        <a href="javascript:;" class="open-search-main-menu"> <i class="icon ion-ios-search"></i>
+        <i class="icon ion-android-close"></i> </a>
+        <ul class="search-main-menu">
+        <li>
+        <form class="manga-search-form search-form ajax" action="https://roadsteam.net/" method="get">
+        <input class="manga-search-field ui-autocomplete-input" type="text" placeholder="Search..." name="s" value="" autocomplete="off">
+        <input type="hidden" name="post_type" value="wp-manga"> <i class="icon ion-ios-search"></i>
+        <div class="loader-inner ball-clip-rotate-multiple">
+        <div></div>
+        <div></div>
+        </div>
+        <input type="submit" value="Search">
+        <ul id="ui-id-3" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on" style="display: none;"></ul></form>
+        </li>
+        </ul>
+        </li>
+        </ul>
+        <div class="link-adv-search">
+        <a href="https://roadsteam.net/?s=&amp;post_type=wp-manga">Advanced</a>
+        </div>
+        </div>
+        </div></div></div></div><div class="widget_text row"><div id="custom_html-2" class="widget_text widget col-12 col-md-12   default  no-icon heading-style-1 widget_custom_html"><div class="widget_text widget__inner widget_custom_html__inner c-widget-wrap"><div class="widget_text widget-content"><div class="textwidget custom-html-widget"></div></div></div></div></div> </div>
+        </div>
+        </div>
+        <div class="row c-row related-manga">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="c-blog__heading style-2 font-heading">
+        <h4>
+        <i class="icon ion-ios-star"></i>
+        YOU MAY ALSO LIKE</h4>
+        </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+        <div class="related-reading-wrap related-style-1">
+        <div class="related-reading-img widget-thumbnail c-image-hover">
+        <a title="BẢN TÌNH CA RỰC RỠ (CAO H)" href="https://roadsteam.net/manga/ban-tinh-ca-ruc-ro/">
+        <img width="75" height="106" src="https://roadsteam.net/wp-content/uploads/2023/01/Output1-75x106.jpg" srcset="https://roadsteam.net/wp-content/uploads/2023/01/Output1-75x106.jpg 75w, https://roadsteam.net/wp-content/uploads/2023/01/Output1-768x1099.jpg 768w, https://roadsteam.net/wp-content/uploads/2023/01/Output1-1074x1536.jpg 1074w, https://roadsteam.net/wp-content/uploads/2023/01/Output1.jpg 1080w" sizes="(max-width: 75px) 100vw, 75px" class="img-responsive" style="" alt="Output1"> </a>
+        </div>
+        <div class="related-reading-content">
+        <h5 class="widget-title">
+        <a href="https://roadsteam.net/manga/ban-tinh-ca-ruc-ro/" title="BẢN TÌNH CA RỰC RỠ (CAO H)">
+        BẢN TÌNH CA RỰC RỠ (CAO H) </a>
+        </h5>
+        </div>
+        <div class="post-on font-meta">
+        <span>
+        22/01/2023 </span>
+        </div>
+        </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+        <div class="related-reading-wrap related-style-1">
+        <div class="related-reading-img widget-thumbnail c-image-hover">
+        <a title="VƯỜN NHÀ CÓ HOA" href="https://roadsteam.net/manga/vuon-nha-co-hoa/">
+        <img width="75" height="106" src="https://roadsteam.net/wp-content/uploads/2023/07/cover-1-75x106.jpg" class="img-responsive" style="" alt="cover"> </a>
+        </div>
+        <div class="related-reading-content">
+        <h5 class="widget-title">
+        <a href="https://roadsteam.net/manga/vuon-nha-co-hoa/" title="VƯỜN NHÀ CÓ HOA">
+        VƯỜN NHÀ CÓ HOA </a>
+        </h5>
+        </div>
+        <div class="post-on font-meta">
+        <span>
+        24/10/2023 </span>
+        </div>
+        </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+        <div class="related-reading-wrap related-style-1">
+        <div class="related-reading-img widget-thumbnail c-image-hover">
+        <a title="KHÔNG THỂ NHÚC NHÍCH" href="https://roadsteam.net/manga/khong-the-nhuc-nhich/">
+        <img width="75" height="106" src="https://roadsteam.net/wp-content/uploads/2023/08/001-75x106.jpg" class="img-responsive" style="" alt="001"> </a>
+        </div>
+        <div class="related-reading-content">
+        <h5 class="widget-title">
+        <a href="https://roadsteam.net/manga/khong-the-nhuc-nhich/" title="KHÔNG THỂ NHÚC NHÍCH">
+        KHÔNG THỂ NHÚC NHÍCH </a>
+        </h5>
+        </div>
+        <div class="post-on font-meta">
+        <span>
+        21/08/2023 </span>
+        </div>
+        </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+        <div class="related-reading-wrap related-style-1">
+        <div class="related-reading-img widget-thumbnail c-image-hover">
+        <a title="CẮN LÀ YÊU" href="https://roadsteam.net/manga/can-la-yeu/">
+        <img width="75" height="106" src="https://roadsteam.net/wp-content/uploads/2022/11/621dd9590df9389b61942636_256x-75x106.webp" srcset="https://roadsteam.net/wp-content/uploads/2022/11/621dd9590df9389b61942636_256x-75x106.webp 75w, https://roadsteam.net/wp-content/uploads/2022/11/621dd9590df9389b61942636_256x.webp 256w" sizes="(max-width: 75px) 100vw, 75px" class="img-responsive" style="" alt="621dd9590df9389b61942636_256x"> </a>
+        </div>
+        <div class="related-reading-content">
+        <h5 class="widget-title">
+        <a href="https://roadsteam.net/manga/can-la-yeu/" title="CẮN LÀ YÊU">
+        CẮN LÀ YÊU </a>
+        </h5>
+        </div>
+        <div class="post-on font-meta">
+        <span>
+        09/12/2022 </span>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div style="position:fixed;right:20px;top:40%;z-index:999"><script async="" src="https://cdn.adop.asia/scripts/a/b6d767d2f8ed5d21a44b0e5886680cb9.js" crossorigin="anonymous" type="text/javascript"></script></div>
+        </div>
+        <footer class="site-footer">
+        <div class="ad c-ads custom-code footer-ads col-md-12"><script data-cfasync="false" async="" type="text/javascript" src="//iu.ecusemis.com/rAIq4Gaxgy9qTfrq/lvlvQ"></script></div>
+        <div class="bottom-footer">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+        <div class="copyright">
+        <p>© 2022 Roads Team</p> </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </footer>
+        </div> </div> 
+        
+        <div class="wp-manga-section">
+        <input type="hidden" name="bookmarking" value="0">
+        <div class="modal fade" id="form-login" tabindex="-1" role="dialog" data-cfapps-welcome-bar-adjusted-fixed-element-original-top="0" style="top: 48px;">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+        <div id="login" class="login">
+        <h3>
+        <a href="https://roadsteam.net/" title="Roads Team" tabindex="-1">Sign in</a>
+        </h3>
+        <p class="message login"></p>
+        <meta name="robots" content="max-image-preview:large">
+        <link rel="icon" href="https://roadsteam.net/wp-content/uploads/2022/10/cropped-LOGO-NHOM1-2-32x32.jpg" sizes="32x32">
+        <link rel="icon" href="https://roadsteam.net/wp-content/uploads/2022/10/cropped-LOGO-NHOM1-2-192x192.jpg" sizes="192x192">
+        <link rel="apple-touch-icon" href="https://roadsteam.net/wp-content/uploads/2022/10/cropped-LOGO-NHOM1-2-180x180.jpg">
+        <meta name="msapplication-TileImage" content="https://roadsteam.net/wp-content/uploads/2022/10/cropped-LOGO-NHOM1-2-270x270.jpg">
+        <form name="loginform" id="loginform" method="post">
+        <p>
+        <label>Username or Email Address * <br> <input type="text" name="log" class="input user_login" value="" size="20">
+        </label>
+        </p>
+        <p>
+        <label>Password * <br> <input type="password" autocomplete="" name="pwd" class="input user_pass" value="" size="20">
+        </label>
+        </p>
+        <p>
+        </p>
+        <p class="forgetmenot">
+        <label>
+        <input name="rememberme" type="checkbox" id="rememberme" value="forever">Remember Me </label>
+        </p>
+        <p class="submit">
+        <input type="submit" name="wp-submit" class="button button-primary button-large wp-submit" value="Log In"> <input type="hidden" name="redirect_to" value="https://roadsteam.net/wp-admin/">
+        <input type="hidden" name="testcookie" value="1">
+        </p>
+        </form>
+        <p class="nav">
+        <a href="javascript:avoid(0)" class="to-reset">Lost your password?</a>
+        </p>
+        <p class="backtoblog">
+        <a href="javascript:void(0)">← Back to Roads Team</a>
+        </p>
+        </div>
+        </div>
+        <div class="modal-footer"></div>
+        </div>
+        </div>
+        </div>
+        <div class="modal fade" id="form-sign-up" tabindex="-1" role="dialog" data-cfapps-welcome-bar-adjusted-fixed-element-original-top="0" style="top: 48px;">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+        <div id="sign-up" class="login">
+        <h3>
+        <a href="https://roadsteam.net/" title="Roads Team" tabindex="-1">Sign Up</a>
+        </h3>
+        <p class="message register">Register For This Site.</p>
+        <form name="registerform" id="registerform" novalidate="novalidate">
+        <p>
+        <label>Username * <br>
+        <input type="text" name="user_sign-up" class="input user_login" value="" size="20">
+        </label>
+        </p>
+        <p>
+        <label>Email Address * <br>
+        <input type="email" name="email_sign-up" class="input user_email" value="" size="20">
+        </label>
+        </p>
+        <p>
+        <label>Password *<br>
+        <input type="password" name="pass_sign-up" autocomplete="" class="input user_pass" value="" size="25">
+        </label>
+        </p>
+        <p class="action">
+        </p>
+        <input type="hidden" name="redirect_to" value="">
+        <p class="submit">
+        <input type="submit" name="wp-submit" class="button button-primary button-large wp-submit" value="Register">
+        </p>
+        </form>
+        <p class="nav">
+        <a href="javascript:void(0)" class="to-login">Log in</a>
+        |
+        <a href="javascript:void(0)" class="to-reset">Lost your password?</a>
+        </p>
+        <p class="backtoblog">
+        <a href="javascript:void(0)">← Back to Roads Team</a>
+        </p>
+        </div>
+        </div>
+        <div class="modal-footer"></div>
+        </div>
+        </div>
+        </div>
+        <div class="modal fade" id="form-reset" tabindex="-1" role="dialog" data-cfapps-welcome-bar-adjusted-fixed-element-original-top="0" style="top: 48px;">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+        <div id="reset" class="login">
+        <h3>
+        <a href="javascript:void(0)" class="to-reset">Lost your password?</a>
+        </h3>
+        <p class="message reset">Please enter your username or email address. You will receive a link to create a new password via email.</p>
+        <form name="resetform" id="resetform" method="post">
+        <p>
+        <label>Username or Email Address <br>
+        <input type="text" name="user_reset" id="user_reset" class="input" value="" size="20">
+        </label>
+        </p>
+        <p class="submit">
+        <input type="submit" name="wp-submit" class="button button-primary button-large wp-submit" value="Get New Password">
+        <input type="hidden" name="testcookie" value="1">
+        </p>
+        </form>
+        <p>
+        <a class="backtoblog" href="javascript:void(0)">← Back to Roads Team</a>
+        </p>
+        </div>
+        </div>
+        <div class="modal-footer"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <a nofollow="" noindex="" href="javascript:void(0);" id="wpdUserContentInfoAnchor" style="display:none;" rel="#wpdUserContentInfo" data-wpd-lity="">wpDiscuz</a><div id="wpdUserContentInfo" style="overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;" class="lity-hide"></div><div id="wpd-editor-source-code-wrapper-bg" data-cfapps-welcome-bar-adjusted-fixed-element-original-top="0" style="top: 48px;"></div><div id="wpd-editor-source-code-wrapper"><textarea id="wpd-editor-source-code"></textarea><button id="wpd-insert-source-code">Insert</button><input type="hidden" id="wpd-editor-uid"></div> <div class="go-to-top active">
+        <i class="icon ion-md-arrow-up"></i>
+        </div>
+        <script type="text/javascript" id="wpdiscuz-combo-js-js-extra">
+        /* <![CDATA[ */
+        var wpdiscuzAjaxObj = {"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_comment_edit_not_possible":"Sorry, this comment is no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_spoiler_title":"Spoiler Title","wc_cannot_rate_again":"You cannot rate again","wc_not_allowed_to_rate":"You're not allowed to rate here","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","is_user_logged_in":"","commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"60","liveUpdateGuests":"0","wordpressThreadCommentsDepth":"2","wordpressIsPaginate":"","commentTextMaxLength":"0","replyTextMaxLength":"0","commentTextMinLength":"1","replyTextMinLength":"1","storeCommenterData":"1","socialLoginAgreementCheckbox":"1","enableFbLogin":"0","fbUseOAuth2":"0","enableFbShare":"0","facebookAppID":"","facebookUseOAuth2":"0","enableGoogleLogin":"0","googleClientID":"","googleClientSecret":"","cookiehash":"5234057a56886c60710ded779b26c1d1","isLoadOnlyParentComments":"0","scrollToComment":"1","commentFormView":"collapsed","enableDropAnimation":"1","isNativeAjaxEnabled":"1","enableBubble":"0","bubbleLiveUpdate":"0","bubbleHintTimeout":"45","bubbleHintHideTimeout":"10","cookieHideBubbleHint":"wpdiscuz_hide_bubble_hint","bubbleShowNewCommentMessage":"1","bubbleLocation":"content_left","firstLoadWithAjax":"0","wc_copied_to_clipboard":"Copied to clipboard!","inlineFeedbackAttractionType":"blink","loadRichEditor":"0","wpDiscuzReCaptchaSK":"","wpDiscuzReCaptchaTheme":"light","wpDiscuzReCaptchaVersion":"2.0","wc_captcha_show_for_guest":"0","wc_captcha_show_for_members":"0","wpDiscuzIsShowOnSubscribeForm":"0","wmuEnabled":"1","wmuInput":"wmu_files","wmuMaxFileCount":"1","wmuMaxFileSize":"2097152","wmuPostMaxSize":"134217728","wmuIsLightbox":"1","wmuMimeTypes":{"jpg":"image\/jpeg","jpeg":"image\/jpeg","jpe":"image\/jpeg","gif":"image\/gif","png":"image\/png","bmp":"image\/bmp","tiff":"image\/tiff","tif":"image\/tiff","ico":"image\/x-icon"},"wmuPhraseConfirmDelete":"Are you sure you want to delete this attachment?","wmuPhraseNotAllowedFile":"Not allowed file type","wmuPhraseMaxFileCount":"Maximum number of uploaded files is 1","wmuPhraseMaxFileSize":"Maximum upload file size is 2MB","wmuPhrasePostMaxSize":"Maximum post size is 128MB","wmuPhraseDoingUpload":"Uploading in progress! Please wait.","msgEmptyFile":"File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.","msgPostIdNotExists":"Post ID not exists","msgUploadingNotAllowed":"Sorry, uploading not allowed for this post","msgPermissionDenied":"You do not have sufficient permissions to perform this action","wmuKeyImages":"images","wmuSingleImageWidth":"auto","wmuSingleImageHeight":"200","version":"7.6.3","wc_post_id":"2123","isCookiesEnabled":"1","loadLastCommentId":"0","dataFilterCallbacks":{"wpdLoadMoreComments":["wp_manga_chapter_comment"]},"phraseFilters":[],"scrollSize":"32","is_email_field_required":"0","url":"https:\/\/roadsteam.net\/wp-admin\/admin-ajax.php","customAjaxUrl":"https:\/\/roadsteam.net\/wp-content\/plugins\/wpdiscuz\/utils\/ajax\/wpdiscuz-ajax.php","bubbleUpdateUrl":"https:\/\/roadsteam.net\/wp-json\/wpdiscuz\/v1\/update","restNonce":"c63e9de839","validateNonceForGuests":""};
+        var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?","additionalTab":"0"};
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-combo-no_quill.min.js?ver=7.6.3" id="wpdiscuz-combo-js-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/core.js?ver=6.3.1" id="madara-core-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/bootstrap.min.js?ver=4.6.0" id="bootstrap-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/shuffle.min.js?ver=5.3.0" id="shuffle-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/aos.js?ver=6.3.1" id="aos-js"></script>
+        <script type="text/javascript" id="madara-js-js-extra">
+        /* <![CDATA[ */
+        var madara = {"ajaxurl":"https:\/\/roadsteam.net\/wp-admin\/admin-ajax.php","query_vars":{"manga-core":"khu-rung-binh-yen","post_type":"wp-manga","name":"khu-rung-binh-yen","chapter":"chap-22","error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"category_name":"","tag":"","cat":"","tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"meta_key":"","meta_value":"","preview":"","s":"","sentence":"","title":"","fields":"","menu_order":"","embed":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"post_name__in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"search_columns":[],"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":true,"update_post_term_cache":true,"update_menu_item_cache":false,"lazy_load_term_meta":true,"update_post_meta_cache":true,"posts_per_page":10,"nopaging":false,"comments_per_page":"50","no_found_rows":false,"order":"DESC"},"current_url":"https:\/\/roadsteam.net\/manga\/khu-rung-binh-yen\/chap-22","cursorPrev":"https:\/\/roadsteam.net\/wp-content\/themes\/madara\/images\/cursorLeft.png","cursorNext":"https:\/\/roadsteam.net\/wp-content\/themes\/madara\/images\/cursorRight.png"};
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/template.js?ver=1.7.3" id="madara-js-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/ajax.js?ver=6.3.1" id="madara-ajax-js"></script>
+        <script type="text/javascript" id="wp-manga-login-ajax-js-extra">
+        /* <![CDATA[ */
+        var wpMangaLogin = {"admin_ajax":"https:\/\/roadsteam.net\/wp-admin\/admin-ajax.php","home_url":"https:\/\/roadsteam.net","nonce":"6e635ed5b8","messages":{"please_enter_username":"Please enter username","please_enter_password":"Please enter password","invalid_username_or_password":"Invalid username or password","server_error":"Server Error!","username_or_email_cannot_be_empty":"Username or Email cannot be empty","please_fill_all_fields":"Please fill in all password fields.","password_cannot_less_than_12":"Password cannot have less than 12 characters","password_doesnot_match":"Password does not match. Please try again.","username_cannot_empty":"Username cannot be empty","email_cannot_empty":"Email cannot be empty","password_cannot_empty":"Password cannot be empty"}};
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/plugins/madara-core/assets/js/login.js?ver=1.7.2" id="wp-manga-login-ajax-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/plugins/madara-core/assets/slick/slick.min.js?ver=6.3.1" id="wp-manga-slick-js-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.2" id="jquery-ui-menu-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" id="regenerator-runtime-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca" id="wp-dom-ready-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1" id="wp-hooks-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef" id="wp-i18n-js"></script>
+        <script id="wp-i18n-js-after" type="text/javascript">
+        wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+        </script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/dist/a11y.min.js?ver=7032343a947cfccf5608" id="wp-a11y-js"></script>
+        <script type="text/javascript" id="jquery-ui-autocomplete-js-extra">
+        /* <![CDATA[ */
+        var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.13.2" id="jquery-ui-autocomplete-js"></script>
+        <script type="text/javascript" id="wp-manga-js-extra">
+        /* <![CDATA[ */
+        var mangaNav = {"mangaUrl":"https:\/\/roadsteam.net\/manga\/khu-rung-binh-yen\/","backInfoPage":"on","text":{"backInfoPage":"Manga Info","prev":"Prev","next":"Next"}};
+        var manga = {"ajax_url":"https:\/\/roadsteam.net\/wp-admin\/admin-ajax.php","home_url":"https:\/\/roadsteam.net","base_url":"https:\/\/roadsteam.net\/manga\/khu-rung-binh-yen\/","manga_paged_var":"manga-paged","enable_manga_view":"0","manga_id":"2123","chapter_slug":"chap-22"};
+        var mangaReadingAjax = {"isEnable":"1"};
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/plugins/madara-core/assets/js/script.js?ver=1.7.1" id="wp-manga-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/themes/madara/js/slick/slick.min.js?ver=1.9.0" id="slick-js"></script>
+        <script type="text/javascript" src="https://roadsteam.net/wp-content/plugins/madara-shortcodes/shortcodes/js/ct-shortcodes.js?ver=1.5.2.1" id="ct-shortcode-js-js"></script>
+        
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QC2RQB65YL" type="text/javascript"></script>
+        <script type="text/javascript">
+          window.dataLayer = window.dataLayer || [];
+        
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-QC2RQB65YL');
+        </script>
+        
+        
+        <cloudflare-app app="welcome-bar" data-style="prominent" style="z-index: 99999992;"><alert-message><alert-message-content>Gợi ý pass (nếu có) sẽ ở trong phần Summary (giới thiệu truyện) nha!</alert-message-content></alert-message><alert-dismiss role="button">×</alert-dismiss></cloudflare-app><p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" hidden="hidden">Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position: absolute;margin: -1px;padding: 0;height: 1px;width: 1px;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);-webkit-clip-path: inset(50%);clip-path: inset(50%);border: 0;word-wrap: normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body>
+</body>
+</html>
+
+
+<div class="go-to-top">
+<i class="icon ion-md-arrow-up"></i>
+</div>

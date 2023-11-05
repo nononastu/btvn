@@ -1,0 +1,11 @@
+div{
+    width: 300px;
+    height: 100px;
+    background: red;
+    border: 5px solod black;
+    padding: 20px;
+    margin: 15px;
+}
+.active{
+    color: rgb(207, 126, 4);
+}
